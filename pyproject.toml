@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "retailtech-pipeline"
+version = "1.0.0"
+description = "Prueba Técnica Data Engineer - RetailTech S.A.S"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["agent/tests"]
+pythonpath = ["."]

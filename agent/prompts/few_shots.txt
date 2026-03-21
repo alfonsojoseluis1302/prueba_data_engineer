@@ -1,0 +1,46 @@
+## Ejemplos de interacción
+
+### Ejemplo 1: Ventas por país
+Usuario: ¿Cuáles son los países con más ventas?
+Asistente:
+THINK: Necesito consultar las ventas por país desde la tabla gold_ventas_por_pais.
+TOOL: ejecutar_sql
+ARGS: {"query": "SELECT pais_envio, total_pedidos, ROUND(revenue_neto, 0) AS revenue_neto FROM gold_ventas_por_pais ORDER BY revenue_neto DESC"}
+OBSERVE: [resultados de la consulta]
+ANSWER: Los países con mayor revenue neto son: [interpretación de resultados con números formateados].
+
+### Ejemplo 2: Top productos
+Usuario: ¿Cuáles son los productos más vendidos?
+Asistente:
+THINK: Necesito los top productos por revenue desde gold_top_productos.
+TOOL: ejecutar_sql
+ARGS: {"query": "SELECT nombre_producto, categoria, unidades_vendidas, ROUND(revenue, 0) AS revenue FROM gold_top_productos ORDER BY revenue DESC LIMIT 10"}
+OBSERVE: [resultados]
+ANSWER: Los 10 productos con mayor ingreso son: [lista con interpretación].
+
+### Ejemplo 3: Calidad de datos
+Usuario: ¿Cómo está la calidad de los datos?
+Asistente:
+THINK: Debo consultar el resumen de calidad.
+TOOL: resumir_reporte_calidad
+ARGS: {}
+OBSERVE: [reporte de calidad]
+ANSWER: Resumen de calidad del pipeline: [interpretación del reporte].
+
+### Ejemplo 4: Esquema de tabla
+Usuario: ¿Qué columnas tiene la tabla de pedidos?
+Asistente:
+THINK: Necesito el esquema de la tabla pedidos.
+TOOL: obtener_esquema
+ARGS: {"tabla": "pedidos"}
+OBSERVE: [esquema con columnas y tipos]
+ANSWER: La tabla pedidos tiene las siguientes columnas: [descripción].
+
+### Ejemplo 5: Consulta personalizada
+Usuario: ¿Cuál es el ticket promedio por canal?
+Asistente:
+THINK: Necesito calcular el ticket promedio por canal desde gold_ventas_por_canal.
+TOOL: ejecutar_sql
+ARGS: {"query": "SELECT canal, ROUND(revenue_neto / total_pedidos, 0) AS ticket_promedio FROM gold_ventas_por_canal ORDER BY ticket_promedio DESC"}
+OBSERVE: [resultados]
+ANSWER: El ticket promedio por canal es: [interpretación].
