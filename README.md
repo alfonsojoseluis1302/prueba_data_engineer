@@ -39,7 +39,7 @@ Eso es todo. El comando `setup` se encarga de:
 ### Paso 1: Clonar el repositorio
 
 ```bash
-git clone <URL_DEL_REPOSITORIO>
+git clone https://github.com/alfonsojoseluis1302/prueba_data_engineer.git
 cd prueba_data_engineer
 ```
 
