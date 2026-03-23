@@ -18,7 +18,7 @@ Pipeline ETL por capas (Bronze/Silver/Gold) con agente conversacional IA para e-
 ## Inicio rapido (un solo comando)
 
 ```bash
-git clone <URL_DEL_REPOSITORIO>
+git clone <https://github.com/alfonsojoseluis1302/prueba_data_engineer.git>
 cd prueba_data_engineer
 python run.py setup      # venv + dependencias + Ollama + modelo LLM
 python run.py pipeline   # ETL completo (Bronze -> Silver -> Gold)
